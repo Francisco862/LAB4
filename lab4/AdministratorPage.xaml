@@ -1,0 +1,64 @@
+﻿<Page x:Class="lab4.AdministratorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:lab4"
+      mc:Ignorable="d"  d:DesignWidth="600"
+      Title="AdministratorPage" Height="966">
+    <ScrollViewer>
+        <Grid Background="Gray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Click="LogoutButton" Content="Wyloguj" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="69" BorderThickness="2,2,2,2" Background="Black" Foreground="White" FontFamily="Arial" FontSize="12" Margin="504,15,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="Panel administratora" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}" Margin="0,10,0,0" Foreground="White" FontSize="24" FontFamily="Arial" Height="40" Grid.Column="1"/>
+            <Label Content="Dodawanie użytkowników" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}" Margin="0,55,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Grid.Column="1"/>
+            <Label Content="Imię" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="41,81,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="50" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="addUserFirstNameText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="12" Margin="41,106,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="Nazwisko" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="166,81,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="67" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="addUserLastNameText" HorizontalAlignment="Left" Margin="165,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="12" Grid.ColumnSpan="2"/>
+            <Label Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="290,81,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="50" Grid.Column="1"/>
+            <TextBox x:Name="addUserLoginText" HorizontalAlignment="Left" Margin="290,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="12" Grid.ColumnSpan="2"/>
+            <Label Content="E-mail" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="415,81,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="50" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="addUserEmailText" HorizontalAlignment="Left" Margin="415,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="12" Grid.ColumnSpan="2"/>
+            <Label Content="Hasło" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="41,127,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="50" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="addUserPasswordText" HorizontalAlignment="Left" Margin="41,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="12" Grid.ColumnSpan="2"/>
+            <Label Content="Typ" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="161,127,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="88" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="addUserType" SelectedIndex="0" HorizontalAlignment="Left" Margin="166,150,0,0" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="12" Height="19" Grid.ColumnSpan="2">
+                <ComboBoxItem>user</ComboBoxItem>
+                <ComboBoxItem>admin</ComboBoxItem>
+            </ComboBox>
+            <Button Click="OnAddUserButton" Content="Dodaj użytkownika" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="119" Background="Black" Foreground="White" FontFamily="Arial" FontSize="12" Margin="291,144,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="Usuwanie użytkowników" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}" Margin="0,185,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Grid.Column="1"/>
+            <Label Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="51,214,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="50" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="deleteUserLoginText" HorizontalAlignment="Left" Margin="99,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="12" Grid.ColumnSpan="2"/>
+            <Button Click="OnDeleteUserButton" Content="Usuń użytkownika" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="119" Background="Black" Foreground="White" FontFamily="Arial" FontSize="12" Margin="224,211,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="Resetowanie hasła" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}" Margin="0,255,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Grid.Column="1"/>
+            <Label Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="41,283,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="50" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="restUserPasswordText" HorizontalAlignment="Left" Margin="85,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="12" Grid.ColumnSpan="2"/>
+            <Label Content="Nowe hasło" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="210,284,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="84" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="newUserPasswordText" HorizontalAlignment="Left" Margin="284,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="12" Grid.ColumnSpan="2"/>
+            <Button Click="OnResetUserPasswordButton" Content="Resetuj hasło" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="119" Background="Black" Foreground="White" FontFamily="Arial" FontSize="12" Margin="409,280,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="Dodawanie wydarzeń" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}" Margin="0,320,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Grid.Column="1"/>
+            <Label Content="Nazwa wydarzenia" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="14,355,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="120" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="addEventText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" FontFamily="Arial" FontSize="12" Margin="14,379,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="Agenda wydarzenia" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="166,355,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="134" RenderTransformOrigin="-0.54,1.308" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="addEventAgendaText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontFamily="Arial" FontSize="12" Margin="166,379,0,0" Grid.ColumnSpan="2"/>
+            <Button Click="OnAddEventButton" Content="Dodaj wydarzenie" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="120" Background="Black" Foreground="White" FontFamily="Arial" FontSize="12" Margin="343,368,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="Usuwanie wydarzeń" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="225,408,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Grid.Column="1"/>
+            <Label Content="Nazwa wydarzenia" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="14,441,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="120" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="eventToDeleteNameText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" FontFamily="Arial" FontSize="12" Margin="14,465,0,0" Grid.ColumnSpan="2"/>
+            <Button Click="OnDeleteEventButton" Content="Usuń wydarzenie" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="118" Background="Black" Foreground="White" FontFamily="Arial" FontSize="12" Margin="166,458,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="Modyfikacja wydarzeń" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="232,499,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Grid.Column="1"/>
+            <Label Content="Nazwa wydarzenia" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="14,530,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="120" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="eventToModifyNameText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" FontFamily="Arial" FontSize="12" Margin="14,554,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="Nowa nazwa wydarzenia" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="161,530,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="154" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="newEventNameText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" FontFamily="Arial" FontSize="12" Margin="165,554,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="Nowa agenda wydarzenia" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Margin="315,530,0,0" Foreground="White" FontSize="12" FontFamily="Arial" Height="24" Width="162" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="newEventAgendaText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontFamily="Arial" FontSize="12" Margin="315,554,0,0" Grid.ColumnSpan="2"/>
+            <Button Click="OnModifyEventButton" Content="Modyfikuj" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="105" Background="Black" Foreground="White" FontFamily="Arial" FontSize="12" Margin="468,547,0,0" Grid.ColumnSpan="2"/>
+        </Grid>
+    </ScrollViewer>
+</Page>
